@@ -3,7 +3,9 @@
 size_t strlen(const char *s) {
 	char *len = (char *)s;
 
-	while (*len != '\0')
+	// added a null check.
+	// if passed string points to NULL, function will return 0.
+	while (len && *len != '\0')
 		len++;
 	return (len - s);
 }
